@@ -1,0 +1,297 @@
+
+/* ===== ShopSphere Global Theme ===== */
+:root {
+    --primary: #5b4bdb;
+    --primary-dark: #4435b5;
+    --accent: #ff8a45;
+    --background: #f5f6fc;
+    --surface: #ffffff;
+    --text: #20233a;
+    --muted: #737891;
+    --border: #e5e7f0;
+    --success: #16865c;
+    --danger: #d94352;
+    --shadow: 0 8px 28px rgba(35, 32, 90, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    line-height: 1.25;
+    color: var(--text);
+}
+
+h1 {
+    font-size: 30px;
+    margin: 24px 0;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+p {
+    color: var(--muted);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* ===== Navigation ===== */
+nav, .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px 5%;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.03);
+}
+
+nav a, .navbar a {
+    margin-right: 16px;
+    font-weight: 600;
+}
+
+/* ===== Page Layout ===== */
+.container, .page-container, main {
+    width: min(1200px, 92%);
+    margin: 32px auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+/* ===== Forms ===== */
+form {
+    margin: 16px 0;
+}
+
+label {
+    display: inline-block;
+    margin: 10px 0 6px;
+    font-weight: 600;
+    color: #454963;
+}
+
+input, select, textarea {
+    width: 100%;
+    max-width: 520px;
+    padding: 12px 14px;
+    border: 1px solid #d9dced;
+    border-radius: 9px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(91, 75, 219, 0.12);
+}
+
+input[type="checkbox"], input[type="radio"] {
+    width: auto;
+}
+
+/* ===== Buttons ===== */
+button, .btn {
+    display: inline-block;
+    padding: 11px 18px;
+    margin: 4px 3px 4px 0;
+    border: none;
+    border-radius: 9px;
+    background: var(--primary);
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover, .btn:hover {
+    background: var(--primary-dark);
+    color: white;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: #eae8ff;
+    color: var(--primary-dark);
+}
+
+.btn-danger {
+    background: var(--danger);
+}
+
+/* ===== Tables ===== */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+th {
+    background: #efedff;
+    color: #39316f;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+tbody tr:hover {
+    background: #faf9ff;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td form {
+    margin: 0;
+}
+
+/* ===== Cards ===== */
+.card, .product-card, .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.product-grid, .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.product-card {
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(35, 32, 90, 0.12);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: contain;
+    background: #f8f8fd;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin-bottom: 8px;
+}
+
+.price {
+    color: var(--primary);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+/* ===== Status / Messages ===== */
+.badge, .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #eeecff;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.success-message {
+    padding: 12px 15px;
+    border-radius: 9px;
+    background: #e7f8ef;
+    color: var(--success);
+}
+
+.error-message {
+    padding: 12px 15px;
+    border-radius: 9px;
+    background: #fff0f0;
+    color: var(--danger);
+}
+
+/* ===== Responsive Tables and Pages ===== */
+@media (max-width: 700px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    nav, .navbar {
+        align-items: flex-start;
+    }
+
+    .container, .page-container, main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 11px 12px;
+    }
+
+    .stats-grid, .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
